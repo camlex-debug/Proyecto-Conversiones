@@ -43,3 +43,16 @@ def ventana_conversion(tipo):
 
     entrada = tk.Entry(ventana, width=20)
     entrada.pack(pady=5)
+
+    resultado = tk.Label(ventana, text="", fg="blue")
+    resultado.pack(pady=5)
+
+    if tipo == 'Longitud':
+        tk.Button(ventana, text="Metros a Kilómetros", command=lambda: convertir_longitud('m_km', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Pulgadas a Metros", command=lambda: convertir_longitud('in_m', entrada, resultado)).pack(pady=2)
+    elif tipo == 'Masa':
+        tk.Button(ventana, text="Kg a Gramos", command=lambda: convertir_masa('kg_g', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Libras a Kg", command=lambda: convertir_masa('lb_kg', entrada, resultado)).pack(pady=2)
+    elif tipo == 'Tiempo':
+        tk.Button(ventana, text="Segundos a Minutos", command=lambda: convertir_tiempo('s_min', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Horas a Días", command=lambda: convertir_tiempo('h_d', entrada, resultado)).pack(pady=2)
