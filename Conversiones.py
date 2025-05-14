@@ -20,7 +20,7 @@ def conversion_de_masa(opcion, entrada, resultado):
             resultante = valor * 1000
             resultado.config(text=f"{valor} kg = {resultante:.2f} gramos")
         elif opcion == 'lb_kg':
-            res = valor * 0.453592
+            resultante = valor * 0.453592
             resultado.config(text=f"{valor} lb = {resultante:.3f} kg")
     except ValueError:
         messagebox.showerror("Error", "Ingresa un número válido")
@@ -32,7 +32,7 @@ def conversion_de_tiempo(opcion, entrada, resultado):
             resultante = valor / 60
             resultado.config(text=f"{valor} segundos = {resultante:.2f} minutos")
         elif opcion == 'h_d':
-            res = valor / 24
+            resultante = valor / 24
             resultado.config(text=f"{valor} horas = {resultante:.2f} días")
     except ValueError:
         messagebox.showerror("Error", "Ingresa un número válido")
@@ -62,7 +62,7 @@ root.title("Conversor de Unidades")
 root.geometry("300x300")
 root.configure(bg="Pink")
 
-label_titulo = tk.Label(root, text="Escoje la opción que desee", bg="HotPink", font=("Verdana", 14))
+label_titulo = tk.Label(root, text="Escoge la opción que desee", bg="HotPink", font=("Verdana", 14))
 label_titulo.pack(pady=15)
 
 btn_longitud = tk.Button(root, text="Longitud", bg="LightYellow", font=("Verdana", 12), command=lambda: ventana_conversion('Longitud'))
