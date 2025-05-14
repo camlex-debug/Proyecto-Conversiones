@@ -24,3 +24,15 @@ def conversion_de_masa(opcion, entrada, resultado):
             resultado.config(text=f"{valor} lb = {resultante:.3f} kg")
     except ValueError:
         messagebox.showerror("Error", "Ingresa un número válido")
+
+def conversion_de_tiempo(opcion, entrada, resultado):
+    try:
+        valor = float(entrada.get())
+        if opcion == 's_min':
+            resultante = valor / 60
+            resultado.config(text=f"{valor} segundos = {resultante:.2f} minutos")
+        elif opcion == 'h_d':
+            res = valor / 24
+            resultado.config(text=f"{valor} horas = {resultante:.2f} días")
+    except ValueError:
+        messagebox.showerror("Error", "Ingresa un número válido")
