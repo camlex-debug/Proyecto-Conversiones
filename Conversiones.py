@@ -60,18 +60,18 @@ def ventana_conversion(tipo):
 root = tk.Tk()
 root.title("Conversor de Unidades")
 root.geometry("300x300")
-root.configure(bg="lightgreen")
+root.configure(bg="Pink")
 
-label_titulo = tk.Label(root, text="Escoja su opción", bg="lightgreen", font=("Arial", 14))
+label_titulo = tk.Label(root, text="Escoje la opción que desee", bg="HotPink", font=("Verdana", 14))
 label_titulo.pack(pady=15)
 
-btn_longitud = tk.Button(root, text="Longitud", bg="orange", font=("Arial", 12), command=lambda: ventana_conversion('Longitud'))
+btn_longitud = tk.Button(root, text="Longitud", bg="LightYellow", font=("Verdana", 12), command=lambda: ventana_conversion('Longitud'))
 btn_longitud.pack(pady=5)
 
-btn_masa = tk.Button(root, text="Masa", bg="orange", font=("Arial", 12), command=lambda: ventana_conversion('Masa'))
+btn_masa = tk.Button(root, text="Masa", bg="LightYellow", font=("Verdana", 12), command=lambda: ventana_conversion('Masa'))
 btn_masa.pack(pady=5)
 
-btn_tiempo = tk.Button(root, text="Tiempo", bg="orange", font=("Arial", 12), command=lambda: ventana_conversion('Tiempo'))
+btn_tiempo = tk.Button(root, text="Tiempo", bg="LightYellow", font=("Verdana", 12), command=lambda: ventana_conversion('Tiempo'))
 btn_tiempo.pack(pady=5)
 
 root.mainloop()
