@@ -48,11 +48,30 @@ def ventana_conversion(tipo):
     resultado.pack(pady=5)
 
     if tipo == 'Longitud':
-        tk.Button(ventana, text="Metros a Kilómetros", command=lambda: convertir_longitud('m_km', entrada, resultado)).pack(pady=2)
-        tk.Button(ventana, text="Pulgadas a Metros", command=lambda: convertir_longitud('in_m', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Metros a Kilómetros", command=lambda: conversion_de_longitud('m_km', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Pulgadas a Metros", command=lambda: conversion_de_longitud('in_m', entrada, resultado)).pack(pady=2)
     elif tipo == 'Masa':
-        tk.Button(ventana, text="Kg a Gramos", command=lambda: convertir_masa('kg_g', entrada, resultado)).pack(pady=2)
-        tk.Button(ventana, text="Libras a Kg", command=lambda: convertir_masa('lb_kg', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Kg a Gramos", command=lambda: conversion_de_masa('kg_g', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Libras a Kg", command=lambda: conversion_de_masa('lb_kg', entrada, resultado)).pack(pady=2)
     elif tipo == 'Tiempo':
-        tk.Button(ventana, text="Segundos a Minutos", command=lambda: convertir_tiempo('s_min', entrada, resultado)).pack(pady=2)
-        tk.Button(ventana, text="Horas a Días", command=lambda: convertir_tiempo('h_d', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Segundos a Minutos", command=lambda: conversion_de_tiempo('s_min', entrada, resultado)).pack(pady=2)
+        tk.Button(ventana, text="Horas a Días", command=lambda: conversion_de_tiempo('h_d', entrada, resultado)).pack(pady=2)
+
+root = tk.Tk()
+root.title("Conversor de Unidades")
+root.geometry("300x300")
+root.configure(bg="lightgreen")
+
+label_titulo = tk.Label(root, text="Escoja su opción", bg="lightgreen", font=("Arial", 14))
+label_titulo.pack(pady=15)
+
+btn_longitud = tk.Button(root, text="Longitud", bg="orange", font=("Arial", 12), command=lambda: ventana_conversion('Longitud'))
+btn_longitud.pack(pady=5)
+
+btn_masa = tk.Button(root, text="Masa", bg="orange", font=("Arial", 12), command=lambda: ventana_conversion('Masa'))
+btn_masa.pack(pady=5)
+
+btn_tiempo = tk.Button(root, text="Tiempo", bg="orange", font=("Arial", 12), command=lambda: ventana_conversion('Tiempo'))
+btn_tiempo.pack(pady=5)
+
+root.mainloop()
