@@ -36,3 +36,10 @@ def conversion_de_tiempo(opcion, entrada, resultado):
             resultado.config(text=f"{valor} horas = {resultante:.2f} días")
     except ValueError:
         messagebox.showerror("Error", "Ingresa un número válido")
+
+def ventana_conversion(tipo):
+    ventana = tk.Toplevel()
+    ventana.title(f"Conversión de {tipo}")
+
+    entrada = tk.Entry(ventana, width=20)
+    entrada.pack(pady=5)
